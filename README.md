@@ -67,19 +67,41 @@ Why is '0 == false' true but '0 === false' false?
 
 0 is a number type, and false is a boolean type. Using '===' will return false because the types do not match. When using '==', type coercion occurs and 'false' is converted to a number, 0, so '0 == false' returns 'true'.
 
+Type Coercion
+
+Doing '5 == "5"' will return 'true' because JavaScript converts strings to numbers in comparison. JavaScript uses 'Number("5")' to convert the string 5 to an integer for comparison. Doing 'Number("a")' will result in 'NaN'. 'Nan == Nan' and 'NaN === NaN' will return 'false'. 'typeof NaN' will return 'number'.
+
 //===Functions & Execution==///
 
 ===Functions===
 
 What’s the difference between a function declaration and a function expression?
 
+A function declaration creates a function using the FUNCTION keyword. Such as 'function printTitle() {}'. Functions that are declared are hoisted and can be called before it is written in the code. Function expressions are functions that are assigned to variables, such as 'let printTitle = function () {}'. These are not hoisted, and therefore cannot be called before it is written.
+
 What are arrow functions, and how are they different?
 
+Arrow functions are function expressions with lexical 'this', no arguments object, and shorter syntax. They cannot be used as constructors.
+
 When would you not want to use an arrow function?
+
+The difference between 'function()' and 'function'?
+
+Writing 'function()' calls the function, and returns the value, if there is a value to be returned. Writing 'function' is the function itself, so 'let x = function' would allow 'x' to reference 'function' so you can write 'x()' to call 'function'. Writing 'let x = myFunction()' would mean that the value returned by 'myFunction' is assigned to 'x', whereas writing 'let x = myFunction' assigns 'myFunction' to 'x' and 'x' can be used to call 'myFunction'.
+
+Difference between 'invoking a function' and 'calling a function'?
+
+Invoking and calling mean the same thing. To call 'myFunction()' means the same as invoking 'myFunction()'.
+
+Difference between 'declaring', 'calling', 'referencing'?
+
+Defining/declaring is when a new function is created, such as 'function myFunction() {}'. Calling is when the function is called and used, such as 'myFunction()'. Referencing is when a variable is used to reference a value or function, such as 'let x = myFunction' or 'let x = 5'. Declaration creates the variable/function, initializing it means giving it a value at declaration, and assigning it means changing the value.
 
 ===Closures===
 
 What is a closure?
+
+A closure is created when a function retains access to variables from its lexical scope even after the outer function has finished executing.
 
 Can you give a real-world example of one?
 
