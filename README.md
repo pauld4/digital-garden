@@ -105,7 +105,13 @@ A closure is created when a function retains access to variables from its lexica
 
 Can you give a real-world example of one?
 
+Why use closures over classes?
+
+Closures provide true data encapsulation by keeping variables private within a function scope. While classes can also achieve privacy using private fields, closures offer a functional approach without relying on class syntax.
+
 Why are closures useful?
+
+Closures are useful because they allow functions to retain access to variables from their lexical scope, enabling private state, persistent data, and powerful patterns like callbacks, factories, and debouncing. Variables are private and only the returned function can modify the variables inside the function. 
 
 //===Arrays & Objects===//
 
@@ -113,17 +119,35 @@ Why are closures useful?
 
 What’s the difference between map, forEach, filter, and reduce?
 
+Map transforms each element into a new value, and returns a new array. Map does not modify the original array. Example is 'const doubled = [1,2,3].map(num => num*2)'. forEach executes a function for each element, and does not return a new array. Example is '[1,2,3].forEach(num => { console.log(num); })'. Filter selects elements from an array based on a condition, and returns a new array. Example is 'const evenNum = [1,2,3,4].filter(num => num % 2 === 0)'. 'evenNum' is now an array that has elements that are even numbers. Filter can be used on the same array so that the new array is assigned to the original array. Reduce reduces an array to a single value, so take a list of numbers and add them together. Such as 'const sum = [1,2,3].reduce((acc,num) => acc + num, 0)'. 'acc' is the accumulator value, and 'num' is the current value. The '0' at the end is the initial value for hte accumulator. So the order would be '0 + 1', '1 + 2', then '3 + 3' which equals '6'. If no intial value is provided then the first array element is the accumulator's initial value.
+
+In short, use map to transform, filter to remove items, reduce to combine items, and forEach to iterate.
+
 How do you remove duplicates from an array?
 
+The best way to remove duplicates from an array is to use Set(). This can be done using 'let newArray = [...new Set([1,2,2,3])]', and 'newArray' will be '[1,2,3]'. Set() converts the array into a Set object, and then that object is converted into an array using the spread syntax, '...'.
+
+What is the JavaScript Set() object?
+
+The Set() is used with an array to return an object of unique values. So writing 'Set([1,2,2,3])' will return a Set object {1,2,3}. Set objects cannot be individually accessed like an array does with indexes, but Sets can still be ready using has(), or iterated over using FOR...OF or forEach. If index access is needed, convert it to an array.
+
 How do you check if a variable is an array?
+
+Use 'Array.isArray(myArray)'. This will return a TRUE or FALSE value. You can convert a SET to an ARRAY using 'mySet = [...mySet]', and then 'console.log(Array.isArray(mySet))' which will return TRUE. You cannot use 'typeof myArray' because that will return 'object'. In JavaScript, ARRAYS are a special type of object, which is why 'Array.isArray()' is used.
 
 ===Objects===
 
 How do you loop over an object’s properties?
 
+Objects are not arrays, so map() or forEach() cannot be used. Instead, use FOR...IN. Such as 'for(let key in obj) { console.log(key, obj[key]); }'. Another method is to use Object.keys(). If you have 'let obj = { a:1, b:2, c:3 }', then you can iterate over that object using 'Object.keys(obj).forEach(key => { console.log(key, obj[key]); })'. You can also use FOR...OF, such as 'for(let [key,value] of Object.entries(obj)) { console.log(key, value); }'. Another way to use Object.entries is to use 'Object.entries(obj).forEach(([key, value]) => { console.log(key, value); })'.
+
 What’s the difference between dot notation and bracket notation?
 
+Dot notation is using dots to access an object properties, and bracket notation uses brackets to access object properties. Dot notation looks like this 'console.log(obj.name)' and bracket notation would be 'console.log(obj["name"])'. Bracket notation can use variables to access the property, such as 'let key = "name"; console.log(obj[key]);'. Dot notation is used for accessing known, valid property names, while bracket notation allows dynamic property access and supports property names with special characters or spaces. By default, dot notation should be used, and bracket notation should be used when the property name is dynamic such as containing spaces or special characters.
+
 What is object destructuring?
+
+Object destructuring is a syntax that allows you to extract properties from an object and assign them to variables. Instead of 'let user = { name: "Paul", count: 10 }; let name = user.name; let count = user.count;' you can do 'let { name, count } = user'. The variable names must match the property names. Defaults can be used too, so if the object does not have a property, then that property can be added, such as 'let { country = "USA" } = user'.
 
 //===Asynchronous JavaScript===//
 
