@@ -155,17 +155,33 @@ Object destructuring is a syntax that allows you to extract properties from an o
 
 What is asynchronous programming?
 
+JavaScript is single threaded, and can only perform one task at a time. Some tasks take time to complete, and JavaScript has to wait for these tasks to complete before it moves to the next. Asynchronous programming in JavaScript is a way to run time-consuming tasks without blocking the rest of your code. 3 main ways to do asynchronous programming in JavaScript is by using Callbacks, Promises, and Async/Await. Async/Await is the most popular today.
+
+What is a callback function?
+
+A callback function is a function that is passed as an argument into another function. For example, 'setTimeout(function() { console.log("Text"); }, 1000)'. The callback part is the 'function() { console.log("Text"); }' function.
+
 What is the event loop?
 
+The event loop is the mechanism in JavaScript that monitors the call stack and the callback queue, and pushes queued callbacks onto the stack when it becomes empty.
+
 What is the call stack?
+
+The call stack is the place where JavaScript keeps track of which functions are currently running. The stack keeps track of the order that functions should be executed and follows a First In Last Out (or Last In First Out) order. Example is the order of these function calls 'console.log("A"); setTimeout(() => { console.log("B"); }, 0); console.log("C"); console.log("D");', which would print ACDB since B is placed in the callback queue and JavaScript finishes executing all synchronous code currently on the call stack before running queued callbacks.
 
 ===Promises & Async/Await===
 
 What is a Promise?
 
+A promise is an object that represents a value that will be available in the future. It represents the eventual completion, or failure, of an asynchronous operation and its resulting value. Instead of using multiple callbacks within each other, promises can be used.
+
 What are the states of a Promise?
 
+Three states of a promise are pending, fulfilled, and rejected.
+
 What’s the difference between .then() and async/await?
+
+.then() is a method used to handle a Promise, and async/await is a cleaner way of working with Promises.
 
 How do you handle errors in async code?
 
