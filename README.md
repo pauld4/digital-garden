@@ -185,7 +185,11 @@ What’s the difference between .then() and async/await?
 
 How do you handle errors in async code?
 
+Errors in async/await requests are handled using try...catch statements.
+
 If you fetch data from an API, how do you handle success and failure?
+
+There are two types of failure to be handled, network failure and HTTP error (404, 500, etc). However, fetch only fails if there is a network error, not an HTTP error. Check for an HTTP error using 'response.ok' with a 'const response = await fetch("myapi/data")', and if no errors occur then run code as usual.
 
 //===DOM & Browser JavaScript===//
 
