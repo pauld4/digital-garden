@@ -195,13 +195,23 @@ There are two types of failure to be handled, network failure and HTTP error (40
 
 How do you select DOM elements?
 
+DOM elements can be selected in multiple ways. Selecting elements by ID, Class, Tag, querySelector, and querySelectorAll. Select elements by ID using 'let element = document.getElementById("myId")' which will return one element with that unique ID. Writing 'let elements = document.getElementsByClassName("myClass")' will select all elements with that class and return an array. To select all 'div' elements, or all 'a' elements, use 'let elements = document.getElementsByTagName("div")', which returns an array as well. querySelector is used to select the first single element with an ID, class, or tag, with 'let element = document.querySelector(".myClass")'. '.myClass' can be substituted for '#myID' or 'div' (or another tag). querySelectorAll does the same thing, but returns an array of every element that matches. Elements returned in an array can be accessed using 'element[1].innerHTML', just as you would with any array.
+
 What’s the difference between querySelector and getElementById?
+
+querySelector requires ID search using '#myID' instead of 'myID' like with getElementById. getElementById is only used for IDs, whereas querySelector can be used for IDs, classes, and tags. getElementById is slightly faster since browsers keep a list of IDs. querySelector and querySelectorAll are mostly used, unless you need an element with a specific ID.
 
 What is event bubbling and event capturing?
 
+Event bubbling is when an element is interacted with and the event in the DOM starts at the element, then 'bubbles' up to the parent element. Such as when clicking a button, the process moves from 'button > body > html > document'. Event capturing is the opposite, where the event starts at the top of the DOM tree and moves to the element, such as 'document > html > body > button'. This is useful for event delegation, so instead of individually assigning a large number of buttons or elements with a click event, event bubbling can be used.
+
 What’s the difference between event.target and event.currentTarget?
 
+event.target is referencing the element that was actually clicked, and event.currentTarget is the element that the event listener is connected to. Clicking a button within a parent element means the target is the button and the parent is the currentTarget. Clicking on the parent means that the parent is both the target and currentTarget.
+
 How do you prevent default browser behavior?
+
+Default behavior means browser performing actions such as navigating to a page after clicking a link, reloading the page after submitting a form, opening the context menu using right click, and scrolling on the page by pressing spacebar. 'e.preventDefault()' prevents that behavior. This is useful in examples such as instead of reloading the page when submitting a form, the data can instead be checked and sent using 'fetch()', and keep the user on the same page. Preventing default behavior is best for overriding the browser's default behavior and instead controlling the behavior yourself using JavaScript.
 
 //===Advanced===//
 
