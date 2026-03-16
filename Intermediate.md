@@ -25,3 +25,7 @@ Another special case built into JavaScript is "null == undefined". JavaScript ha
 All non-empty strings are truthy, so "Boolean('asdf')" is TRUE.
 
 More type coercion occurs with "'false' == FALSE". 'false' becomes NaN because JavaScript converts the string to a number using Number('false'), so anything compared to NaN is false. But also FALSE becomes 0 due to type coercion. So the final comparison becomes "NaN == 0", which is FALSE.
+
+Important note is that === DOES NOT allow type coercion. So normally type coercion occurs with a statement such as "'0' == FALSE", where one is a string and the other is a boolean. The string is converted to a number, 0, and then the boolean is converted to a number, 0. So it becomes "0 == 0" which is TRUE. However, "'0' === FALSE" is FALSE because no type coercion occurs, so comparing a STRING to a BOOLEAN is automatically FALSE.
+
+More coercion with "console.log([null] == 0)". Arrays get converted to strings, but [null].toString() converts to an empty string, which then converts to 0. So this statement is TRUE. This is the same for [undefined] == 0, but "[NaN] == 0" is FALSE.
