@@ -10,7 +10,7 @@ So "[] + {}" without "console.log()" is still "[object Object]", however, "{} + 
 
 Adding decimals is tricky in JavaScript. "0.1 + 0.2" does not equal "0.3". Some decimal math equals what it should, such as "0.1 + 0.3 === 0.4", is TRUE. To math decimals, you can convert to a whole number first "0.1 * 10 + 0.2 * 10"
 
-"[] == ![]" equals TRUE. The "!" is evaluated first, which makes "![]" equal FALSE. Then the array and FALSE are converted to FALSE, then to 0, which equals "0 == 0" which is TRUE.
+"[] == ![]" equals TRUE. Remember, "[]" is truethy, so "![]" becomes FALSE. Then the array and FALSE are not the same type, so type coercion occurs. The FALSE is converted to 0. Now the comparison is "[] == 0", and since they are still not equal types, "[]" is converted to string with "[].toString()", and becomes an empty string. The comparison becomes "'' == 0", and type coercion occurs again. "Number("")" is used on the empty string, and becomes 0. The comparison now equals "0 == 0" which is TRUE.
 
 Now "[] == []" and "{} == {}" are both false because an important rule, "Objects are compared by reference, not value". And these two statements reference different arrays / objects. This is the same when comparing them using ===.
 
@@ -29,3 +29,7 @@ More type coercion occurs with "'false' == FALSE". 'false' becomes NaN because J
 Important note is that === DOES NOT allow type coercion. So normally type coercion occurs with a statement such as "'0' == FALSE", where one is a string and the other is a boolean. The string is converted to a number, 0, and then the boolean is converted to a number, 0. So it becomes "0 == 0" which is TRUE. However, "'0' === FALSE" is FALSE because no type coercion occurs, so comparing a STRING to a BOOLEAN is automatically FALSE.
 
 More coercion with "console.log([null] == 0)". Arrays get converted to strings, but [null].toString() converts to an empty string, which then converts to 0. So this statement is TRUE. This is the same for [undefined] == 0, but "[NaN] == 0" is FALSE.
+
+JavaScript uses lexical scoping, which means that variables are searched for in the order of local scope, outer/parent scope, and then global scope. If a variable is redeclared inside a function, the variable is hoisted and becomes the default value (LET/CONST is ERROR, but VAR is UNDEFINED). If a variable is used before it is assigned a value, then an ERROR or UNDEFINED will show, depending on the variable type.
+
+In the statement "typeof typeof 1", "typeof 1" is evaluated first and returns a string, "number". Then the statement becomes "typeof 'number'", which evaluates to "string". Typeof returns a string describing the value. "string","number", etc.
