@@ -15,7 +15,7 @@ VAR
 LET
 -Block scoped
 -Not initialized
--Can be reassigned, but not redclared in the same scope
+-Can be reassigned, but not redeclared in the same scope
 -Safer than Var
 CONST
 -Block scoped
@@ -84,6 +84,8 @@ What are arrow functions, and how are they different?
 Arrow functions are function expressions with lexical 'this', no arguments object, and shorter syntax. They cannot be used as constructors.
 
 When would you not want to use an arrow function?
+
+Arrow functions do not have their own THIS keyword, so THIS is inherited from the surrounding scope. Do not use them for object methods. Arrow functions cannot be used with NEW. Arrow functions do not have a prototype, so they cannot be constructors. Arrow functions also do not have an ARGUMENTS object. An arrow function should not be used when using methods that rely on dynamic THIS. THIS is fixed, and arrow functions will ignore functions that use CALL, APPLY, or BIND.
 
 The difference between 'function()' and 'function'?
 
@@ -215,15 +217,7 @@ Default behavior means browser performing actions such as navigating to a page a
 
 //===Advanced===//
 
-What is hoisting?
-
-What is the this keyword, and how does it change?
-
-What is prototypal inheritance?
-
 What’s the difference between shallow and deep copying?
-
-How does JavaScript manage memory? (garbage collection)
 
 //===Practical / Scenario===//
 
@@ -239,10 +233,20 @@ How do you structure JavaScript code in a larger project?
 
 Reverse a string
 
+You would use a combination of SPLIT, REVERSE, then JOIN, such as "const reversed = str.split('').reverse().join('')". You can also use "const reversed = [...str].reverse().join('')".
+
 Count occurrences in an array
+
+If you need to count one item, you can simply use "const appleCount = fruits.filter(x => x === 'apple').length". This is a simpler approach compared to using REDUCE. However, using REDUCE is standard and preferred.
 
 Toggle a boolean value
 
+Use "val = !val".
+
 Find the largest number in an array
 
+Use "Math.max(...numbers)" in "let numbers = [1,2,3,4]".
+
 Debounce or throttle an event
+
+Debounce is used for events that execute many times, and then pauses for a moment. Throttle is used for events that occur infrequently, and limit the event occuring too often.
