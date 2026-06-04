@@ -1,4 +1,4 @@
-**What is the difference between a Software Engineer and Software Developer?**
+<span style="font-size:24px;">**What is the difference between a Software Engineer and Software Developer?**</span>
 
 Both are similar, but engineers focus more on the overall functionality of an application, and developers focus more on specific functionalities of an application.
 
