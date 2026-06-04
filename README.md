@@ -1,5 +1,3 @@
-# js-questions
-
 ## Core JavaScript Basics
 
 **Variables & Scope**
@@ -113,8 +111,6 @@ Closures provide true data encapsulation by keeping variables private within a f
 
 Closures are useful because they allow functions to retain access to variables from their lexical scope, enabling private state, persistent data, and powerful patterns like callbacks, factories, and debouncing. Variables are private and only the returned function can modify the variables inside the function. 
 
-## Arrays & Objects
-
 ## Arrays
 
 ### **What’s the difference between map, forEach, filter, and reduce?**
@@ -150,8 +146,6 @@ Dot notation is using dots to access an object properties, and bracket notation 
 Object destructuring is a syntax that allows you to extract properties from an object and assign them to variables. Instead of 'let user = { name: "Paul", count: 10 }; let name = user.name; let count = user.count;' you can do 'let { name, count } = user'. The variable names must match the property names. Defaults can be used too, so if the object does not have a property, then that property can be added, such as 'let { country = "USA" } = user'.
 
 ## Asynchronous JavaScript
-
-## Async Concepts
 
 ### **What is asynchronous programming?**
 
