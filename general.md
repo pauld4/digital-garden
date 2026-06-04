@@ -4,13 +4,13 @@ Both titles are similar, but engineers focus more on the overall functionality o
 
 **Source:** https://careerengagement.tulane.edu/blog/2023/08/05/software-developer-vs-software-engineer-whats-the-difference/
 
-##### **What is Quality Assurance(QA)?**
+#### **What is Quality Assurance(QA)?**
 
 The definition of "assurance" is "a positive declaration intended to give confidence". In software testing, quality assurance simply assures that the software application works as it should. Quality assurance is done in parallel to developing the software, so the cycle goes back and forth between implementing a feature in the application and testing that feature.
 
 **Source:** https://www.geeksforgeeks.org/software-testing/software-engineering-software-quality-assurance/
 
-##### **What is JavaScipt(JS)?**
+#### **What is JavaScipt(JS)?**
 
 JavaScript works with HTML and CSS on a website's page and its data to create interactive and dynamic webpages. JavaScript allows a webpage to detect when a user clicks, presses a keyboard key, or other interactions, and can dynamically change a web page based on which interaction the user performs.
 
@@ -33,18 +33,18 @@ JavaScript works with HTML and CSS on a website's page and its data to create in
 
 #### **What is the difference between Front End and Back End?**
 
-### **What are some secure authentication workflows?**
+#### **What are some secure authentication workflows?**
 
-### **What are database driven features?**
+#### **What are database driven features?**
 
-### **What makes code 'Maintainable'?**
+#### **What makes code 'Maintainable'?**
 
-### **What are Edge Cases?**
+#### **What are Edge Cases?**
 
-### **What are strategies used for testing?**
+#### **What are strategies used for testing?**
 
-### **What considerations should be made in regards to an application's performance?**
+#### **What considerations should be made in regards to an application's performance?**
 
-### **What makes an application scalable?**
+#### **What makes an application scalable?**
 
-### **What makes an application secure?**
+#### **What makes an application secure?**
