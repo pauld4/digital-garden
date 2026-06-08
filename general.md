@@ -58,7 +58,15 @@ Features of a website that use specific information from the database to provide
 
 #### **What makes code 'Maintainable'?**
 
+Code that is maintainable means that it can be easily understood and updated. More specifically, when that code is worked on by another developer or if the original developer has forgotten how the code works. Having descriptive variable names and consistent naming conventions helps readability. Functions that are short and only have one 'function' and comments are important as well.
+
+**Source:** https://dev.to/codenewbieteam/how-do-you-ensure-that-your-code-is-scalable-maintainable-jf9
+
 #### **What are Edge Cases?**
+
+Edge cases are scenarios where rare data causes problems for a system. This rare data is usually along the edge of the application's limits, such as submitting input values as 0 or a very long value. This could be a user entering in a paragraph of informatino for a user name, or limits with data types, such as the integer limit of 2,147,483,647. It is common to check for edge cases when debugging an application.
+
+**Source:** https://www.coursera.org/articles/edge-case
 
 #### **What are strategies used for testing?**
 
