@@ -64,7 +64,7 @@ Code that is maintainable means that it can be easily understood and updated. Mo
 
 #### **What are Edge Cases?**
 
-Edge cases are scenarios where rare data causes problems for a system. This rare data is usually along the edge of the application's limits, such as submitting input values as 0 or a very long value. This could be a user entering in a paragraph of informatino for a user name, or limits with data types, such as the integer limit of 2,147,483,647. It is common to check for edge cases when debugging an application.
+Edge cases are scenarios where rare data causes problems for a system. This rare data is usually along the edge of the application's limits, such as submitting input values as 0 or a very long value. This could be a user entering in a paragraph of information for a user name, or limits with data types, such as the integer limit of 2,147,483,647. It is common to check for edge cases when debugging an application.
 
 **Source:** https://www.coursera.org/articles/edge-case
 
